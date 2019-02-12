@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    --time: 0.6s;
+}
+
+
+/* nav menu */
+
+/* main hamburger */
+.burger {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-bottom: 10px black solid;
+    transform: translateY(-25px);
+    z-index: 2;
+}
+
+.burger::before, 
+.burger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    border-bottom: 10px solid black;
+    transition: 1s;
+}
+
+.burger::before {
+    transform: translateY(25px);
+    transform-origin: top right;
+}
+
+.burger::after {
+    transform: translateY(75px);
+    transform-origin: bottom left;
+}
+
+/* x icon */
+.burger.active {
+    border-bottom: none;
+}
+
+.burger.active::before {
+    transform: rotate(-45deg) translateY(15px) translateX(-30px);
+
+}
+
+.burger.active::after {
+    transform: rotate(45deg) translateY(15px) translateX(25px);
+}  
+
+/* style of aside and nav */
+
+aside {
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    transform: translateX(100%);
+    transition: var(--time);
+    z-index:1;
+}
+
+
+div.picture {
+    opacity: 0;
+    width:70vw;
+    height: 100vh;
+    background-image: url("img/4a.jpg");
+    background-size: cover;
+    transition: var(--time);
+    transition-delay: var(--time);
+}
+
+nav {
+    margin: 0 auto;
+    padding-top: 25vh;
+    font-weight: 400;
+    font-size: 60px;
+    color: rgb(174, 191, 209);
+}
+
+ul {
+  list-style: none;
+}
+
+li{
+    transition: 0.2s;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: rgb(174, 191, 209);
+}
+
+li:hover,
+li:active {
+    transform: scaleX(1.2);
+}
+
+/* style of active aside and nav */
+
+aside.on {
+    background-color:rgb(84,119, 157);
+    transform: translateX(0%);
+}
+
+aside.on div.picture {
+    opacity: 1;
+}
+
+/* style of About me */
+
+.aboutme_main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.aboutme_picture{
+    background-image: url(img/5a.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+}
+
+.aboutme_text {
+    margin: 0 auto;
+    padding-top: 30vh;
+    color: rgb(115,132,144);
+    font-weight: 400;
+    font-size: 60px;
+}
+
+.fa-angle-down {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    color: rgb(115,132,144);
+    transition: 1s;
+    animation: shakes infinite 3s;
+}
+
+/* arrow */
+@keyframes shakes {
+    0% {transform: translate(-50%, 0%);
+    }
+    80% {transform: translate(-50%, 0%);
+    }
+    85% {transform: translate(-50%, 10%);
+    }
+    90% {
+        transform: translate(-50%, 0%);
+    }
+    95% {transform: translate(-50%, 10%);
+    }
+    100% {transform: translate(-50%, 0%);
+    }
+}
+
+/* animations */
+
+
+.animBox {
+    display: flex;
+    position: relative;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.animBox div {
+    width: 50%;
+}
+
+.animBox_text {
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.anim1, .anim2 {
+    width: 30vw;
+    height: 30vw;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.animBox:nth-of-type(2) {
+    border-top: dashed 10px rgba(115, 132, 144, 0.05);
+    border-bottom: dashed 10px rgba(115, 132, 144, 0.05);
+}
+
+
+/* style of Contact */
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top:20vh;
+    padding-bottom:20vh;
+    color: white;
+    /* background-color:rgb(150,144,92);
+   background-color:rgb(183,119,71);  */
+   background-color:rgb(218,147,71, 0.7); 
+   /* background-color:rgb(218,147,55);  */
+    font-size: 40px;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.icon {
+    display: flex;
+    font-size: 60px;
+    justify-content: space-between;
+    padding-top: 50px;
+    width: 400px;
+}
+/* 
+.contact::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0;
+    background-image: url(img/1a.JPG);
+    background-size: cover;
+    background-position: 100%;
+    z-index: -1;
+    opacity: 0.5;
+} */
+/* .contact div:nth-of-type(1) {
+    width: 50vw;
+}
+
+.contact_text {
+    position: relative;
+    color: rgb(115,132,144);
+    font-size: 40px;
+}
+
+.contact_text div {
+    position:absolute;
+    line-height: 2em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%,-50%)
+}
+.contact_form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+}
+
+.email,
+textarea {
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 5px;
+    padding-left: 10px;
+    border:5px solid  rgb(115,132,144);
+    color: rgb(115,132,144);
+    font-family:'Noto Sans TC', sans-serif;
+    font-weight: 100;
+}
+
+input::placeholder, 
+textarea::placeholder {
+    color: rgb(115,132,144);
+}
+
+.email {
+    line-height: 1.5em;
+}
+
+textarea {
+    height: auto;
+    resize: vertical;
+    min-height: 200px;
+    max-height: 400px;
+}
+
+textarea:focus, 
+.email:focus{
+    background-color: rgb(115,132,144);
+    color: white;
+}
+
+button.send {
+        width: 80%;
+        color: white;
+        font-size: 24px;
+        line-height: 2em;
+        cursor: pointer;
+        background-color: rgb(115,132,144);
+        border-radius: 3px;
+        border: none;
+        margin: 5px;
+        padding-left: 10px;
+        transition: .5s;
+    }
+
+    button.send p {
+        transition: .5s;
+    }
+
+    
+button.send:hover{
+    background-color:  rgb(84,119, 157);
+}
+
+button.send p:hover {
+    transform: scale(1.2);
+} */
+
+
+
+/* Portfolio */
+/* main gallery */
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10vh;
+    /* margin-top: 10vh; */
+}
+
+/* style of each work from gallery */
+
+.port_item{
+    padding-bottom: 5vh;
+}
+
+.port_img {
+    position: relative;
+    overflow: hidden;
+    width:30vw;
+    height: 30vw;
+}
+
+.port_bg{
+    width:30vw;
+    height: 30vw;
+    background-size: cover;
+    border: rgb(241, 242, 244) solid 10px;
+    border-radius: 10px;
+}
+
+.port_board{
+    display: flex;
+    flex-direction: column;
+    width:30vw;
+    height: 30vw;
+    padding:10px;
+    padding-top:50px;
+    border-radius: 10px;
+    transform: translateY(0);
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.port_board span,
+.port_board h1{
+    color: white;
+    text-align: center;
+    line-height: 1.5em;
+}
+.port_item:hover .port_img>.port_board{
+    transform: translateY(-30vw);
+}
+
+.title {
+    height: 15vh;
+    width:30vw;
+    padding-top:2vh;
+    cursor: pointer;
+    text-align: center;
+}
+
+.title a {
+   color:black;
+   position: relative;
+}
+
+.title a:before{
+    display: block;
+    width:10px;
+    height:10px;
+    background-color: rgb(229, 179, 125);
+}
+
+
+
+
+/* background of each gallery and color of board */
+/* 1st and 3rd*/
+
+.port_item:nth-child(1)>.port_img>.port_bg{
+    background-image: url(img/a.jpg);
+    background-position: 50% 50%;
+}
+
+.port_item:nth-child(1)>.title>span,
+.port_item:nth-child(3)>.title>span{
+    color: rgb(229, 179, 125);
+}
+
+.port_item:nth-child(1)>.port_img>.port_board,
+.port_item:nth-child(3)>.port_img>.port_board {
+    background-color: rgb(229, 179, 125);
+    border: 10px solid rgb(229, 179, 125);
+}
+
+/* 2nd */
+
+.port_item:nth-child(2)>.port_img>.port_bg{
+    background-image: url(img/b.jpg);
+}
+
+.port_item:nth-child(2)>.title>span{
+    color: rgb(84,119,157);;
+}
+
+.port_item:nth-child(2)>.port_img>.port_board {
+    background-color: rgb(84,119,157);
+    border: 10px solid rgb(84,119,157);;
+}
+
+/* 3rd */
+
+.port_item:nth-child(3)>.port_img>.port_bg{
+    background-image: url(img/c.jpg);
+    background-position: 50% 130%;
+}
+
+
+/* Drawings */
+
+.drawings {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.draw {
+    background-color: purple;
+    width: 35vw;
+    height: 35vw;
+    margin: 5vh;
+    background-size: cover;
+    /* border: rgb(241, 242, 244) solid 10px;
+    border-radius: 10px; */
+
+
+}
+
+/* each of drawing */
+
+
+.draw:nth-of-type(1){
+    background-image: url(draw/d1.JPG);
+}
+
+.draw:nth-of-type(2){
+    background-image: url(draw/d2.jpg);
+}
+
+.draw:nth-of-type(3){
+    background-image: url(draw/d3.JPG);
+}
+
+.draw:nth-of-type(4){
+    background-image: url(draw/d4.jpg);
+}
+
+.draw:nth-of-type(5){
+    background-image: url(draw/d5.png);
+}
+
+.draw:nth-of-type(6){
+    background-image: url(draw/d6.jpg);
+}
+
+
+
+
+
