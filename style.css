@@ -75,7 +75,7 @@ aside {
     opacity: 0;
     width: 70vw;
     height: 100vh;
-    background-image: url("img/4a.jpg");
+    background-image: url("img/4am.jpg");
     background-size: cover;
     transition: var(--time);
     transition-delay: var(--time);
@@ -130,7 +130,7 @@ aside.on .aside_picture {
 }
 
 .aboutme_picture {
-    background-image: url(img/5a.jpg);
+    background-image: url(img/5am.jpg);
     background-position: center;
     background-size: cover;
     width: 50%;
@@ -341,7 +341,7 @@ aside.on .aside_picture {
 /* 1st and 3rd*/
 
 .port_item:nth-child(1)>.port_img>.port_bg {
-    background-image: url(img/a.jpg);
+    background-image: url(img/am.jpg);
     background-position: 50% 50%;
 }
 
@@ -359,7 +359,7 @@ aside.on .aside_picture {
 /* 2nd */
 
 .port_item:nth-child(2)>.port_img>.port_bg {
-    background-image: url(img/b.jpg);
+    background-image: url(img/bm.jpg);
 }
 
 .port_item:nth-child(2)>.title>span {
@@ -385,7 +385,7 @@ aside.on .aside_picture {
 .prints {
     display: flex;
     width: 100vw;
-    background-color: rgb(4, 0, 0, 0.1);
+    /* background-color: rgb(4, 0, 0, 0.1); */
     justify-content: center;
 }
 
