@@ -422,6 +422,15 @@ aside.on .aside_picture {
         background-position: 50% 0;
     }
 
+    aside {
+        width: 100%;
+    }
+
+    nav {
+        font-size: 40px;
+        margin-right: 1em;
+    }
+
     /* style of About me */
     .aboutme_main {
         flex-direction: column;
@@ -461,14 +470,16 @@ aside.on .aside_picture {
     }
 
     .anim1,
-    .anim2 {
+    .anim2,
+    .anim3 {
         width: 80vw;
-        height: 80vw;
+        height: 80vh;
     }
 
     /* Contact */
     .contact {
         text-align: center;
+        font-size: 30px;
     }
 
     .icon {
@@ -499,5 +510,15 @@ aside.on .aside_picture {
     .img_item img,
     .print_item img {
         width: 80vw;
+    }
+}
+
+@media screen and (max-width:660px) and (orientation: landscape) {
+
+    .anim1,
+    .anim2,
+    .anim3 {
+        width: 90vw;
+        height: 100vh;
     }
 }
