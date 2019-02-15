@@ -209,7 +209,8 @@ aside.on .aside_picture {
 
 
 .anim1,
-.anim2 {
+.anim2,
+.anim3 {
     width: 30vw;
     height: 30vw;
     background-repeat: no-repeat;
@@ -376,17 +377,29 @@ aside.on .aside_picture {
 /* 3rd */
 
 .port_item:nth-child(3)>.port_img>.port_bg {
-    background-image: url(img/github.svg);
+    background-image: url(img/github.png);
 }
 
 
 /* Drawings and print*/
 .drawings,
 .prints {
+    position: relative;
     display: flex;
     width: 100vw;
-    /* background-color: rgb(4, 0, 0, 0.1); */
     justify-content: center;
+    padding-top: 50px;
+}
+
+.previous {
+    position: absolute;
+    top: 15px;
+    left: 10.5vw;
+    font-size: 18px;
+}
+
+.previous i {
+    padding-right: 0.5em;
 }
 
 /* .drawings a {
@@ -398,7 +411,7 @@ aside.on .aside_picture {
     width: 25vw;
     height: auto;
     border-radius: 10px;
-    margin: 1em;
+    margin: 1vw;
 }
 
 
@@ -451,6 +464,16 @@ aside.on .aside_picture {
     .anim2 {
         width: 80vw;
         height: 80vw;
+    }
+
+    /* Contact */
+    .contact {
+        text-align: center;
+    }
+
+    .icon {
+        justify-content: space-around;
+        padding-top: 20px;
     }
 
     /* Portfolio */

@@ -10,10 +10,13 @@ let addLetter;
 //animation on About me
 const anim1 = document.querySelector('.anim1');
 const anim2 = document.querySelector('.anim2');
+const anim3 = document.querySelector('.anim3');
 let index1 = 0;
 let index2 = 0;
+let index3 = 0;
 const board1 = ['anim/1/anim1_1.svg', 'anim/1/anim1_2.svg', 'anim/1/anim1_3.svg', 'anim/1/anim1_4.svg'];
 const board2 = ['anim/2/anim2_1.svg', 'anim/2/anim2_2.svg', 'anim/2/anim2_3.svg', 'anim/2/anim2_4.svg', 'anim/2/anim2_5.svg'];
+const board3 = ['anim/3/anim3_1.svg', 'anim/3/anim3_2.svg', 'anim/3/anim3_3.svg', 'anim/3/anim3_4.svg'];
 
 
 // interval
@@ -28,8 +31,7 @@ const typing = () => {
         li2.innerHTML += tab[1][indexLetter];
         li3.innerHTML += tab[2][indexLetter];
         indexLetter++;
-    }
-    else {
+    } else {
         indexLetter = 0;
         clearInterval(addLetter);
     }
@@ -51,8 +53,7 @@ const addInterval = () => {
         const div = document.querySelectorAll('li a div');
         div.forEach(item => item.textContent = "");
         return active = true;
-    }
-    else if (active == true) {
+    } else if (active == true) {
         addLetter = setInterval(typing, time);
         active = false;
     }
@@ -65,16 +66,21 @@ const goAnimation1 = () => {
     if (index1 < board1.length) {
         anim1.style.backgroundImage = `url(${board1[index1]})`;
         index1++
-    }
-    else index1 = 0;
+    } else index1 = 0;
 }
 
 const goAnimation2 = () => {
     if (index2 < board2.length) {
         anim2.style.backgroundImage = `url(${board2[index2]})`;
         index2++
-    }
-    else index2 = 0;
+    } else index2 = 0;
+}
+
+const goAnimation3 = () => {
+    if (index3 < board3.length) {
+        anim3.style.backgroundImage = `url(${board3[index3]})`;
+        index3++
+    } else index3 = 0;
 }
 
 
@@ -82,6 +88,7 @@ const goAnimation2 = () => {
 
 const animation1 = setInterval(goAnimation1, 400);
 const animation2 = setInterval(goAnimation2, 500);
+const animation3 = setInterval(goAnimation3, 500);
 
 
 
@@ -90,8 +97,7 @@ const showScroll = () => {
     let windowTop = window.scrollY;
     if (windowTop >= 100) {
         fas.style.opacity = "0";
-    }
-    else {
+    } else {
         fas.style.opacity = "1";
     }
 }
@@ -100,5 +106,3 @@ const showScroll = () => {
 burger.addEventListener('click', showMenu)
 burger.addEventListener('click', addInterval)
 window.addEventListener('scroll', showScroll)
-
-
