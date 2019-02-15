@@ -465,7 +465,6 @@ aside.on .aside_picture {
 
     .animBox_text {
         padding-left: 0;
-        align-items: center;
         font-size: 18px;
     }
 
@@ -480,6 +479,7 @@ aside.on .aside_picture {
     .contact {
         text-align: center;
         font-size: 30px;
+        height: auto;
     }
 
     .icon {
@@ -513,8 +513,23 @@ aside.on .aside_picture {
     }
 }
 
-@media screen and (max-width:660px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
 
+    /* portfolio */
+    /* main gallery */
+    .port_img,
+    .port_bg {
+        width: 80vh;
+        height: 80vh;
+    }
+
+    /* Drawings and Prints */
+    .img_item img,
+    .print_item img {
+        width: 80vh;
+    }
+
+    /* animation */
     .anim1,
     .anim2,
     .anim3 {
