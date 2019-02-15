@@ -376,7 +376,7 @@ aside.on .aside_picture {
 /* 3rd */
 
 .port_item:nth-child(3)>.port_img>.port_bg {
-    background-image: url(img/github2.jpg);
+    background-image: url(img/github.svg);
 }
 
 
